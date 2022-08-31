@@ -3,17 +3,17 @@ import './styles.css'
 
 const Weather = ({weatherData}) => {
   // tim trong du lieu tra ve icon 
-  // const src = useMemo(() => {
-  //   return `http://openweathermap.org/img/wn/${}@2x.png`
-  // }, [data])
-  
+  const src = useMemo(() => {
+    return `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`
+  }, [weatherData])
+
   return (
     <div className='weather'>
       <div className='general'>
         <div className='location'>{weatherData.name}</div>
-        <div>{weatherData.weather.description}</div>
-        <img alt='' />
-        <div className='temperature'>{weatherData.main.temp_min}<sup>o</sup></div>
+        <div></div>
+        <img src={src} alt={src} />
+        <div className='temperature'>{weatherData.main.temp}<sup>o</sup></div>
       </div>
 
       <div className='row'>
