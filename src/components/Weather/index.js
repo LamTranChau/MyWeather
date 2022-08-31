@@ -11,7 +11,7 @@ const Weather = ({weatherData}) => {
     <div className='weather'>
       <div className='general'>
         <div className='location'>{weatherData.name}</div>
-        <div></div>
+        <div>{weatherData.weather[0].description}</div>
         <img src={src} alt={src} />
         <div className='temperature'>{weatherData.main.temp}<sup>o</sup></div>
       </div>
